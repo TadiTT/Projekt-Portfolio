@@ -109,18 +109,40 @@ def Aufgabe5():
 def Aufgabe6():
     print("###Visualisierungen###")
 
-    df = pd.read_csv(Verkauf, sep=";", dayfirst=True)
+    df = pd.read_csv(Verkauf, encoding='utf-8-sig', on_bad_lines='skip', sep=None, engine='python', dayfirst=True)
 
     UmsatzProProdukt = df.groupby("Produkt")["Umsatz"].sum().sort_values()
 
-    UmsatzProProdukt.plot(kind="barh")
+    MonatlicherUmsatzX = df.groupby("Monat").sort_values()
+    MonatlicherUmsatzY = MonatlicherUmsatzX.groupby("Umsatz").sum()
 
-    plt.ylabel("Produkt")
-    plt.xlabel("Umsatz")
-    plt.title("Umsatz pro Produkt")
+    try:
+        Entscheidung = int(input("Was wollen sie sich angezeigt haben lassen:\n"
+                                 "1 - Umsatz pro Produkt\n"
+                                 "2 - Monatlicher Umsatz\n"
+                                 "3 - Umsatzteil pro Kategorie\n"))
 
-    plt.tight_layout()
-    plt.show()
+        match Entscheidung:
+            case 1:
+                UmsatzProProdukt.plot(kind="barh")
+
+                plt.ylabel("Produkt")
+                plt.xlabel("Umsatz")
+                plt.title("Umsatz pro Produkt")
+
+                plt.plot(MonatlicherUmsatzX, MonatlicherUmsatzY, linestyle='--', marker='o', color='blue', linewidth=2, label='Linie 1')
+
+                UmsatzProProdukt.plot(kind="barh")
+
+                plt.ylabel("Produkt")
+                plt.xlabel("Umsatz")
+                plt.title("Balkendiagramm - Umsatz pro Produkt")
+
+                plt.tight_layout()
+                plt.show()
+
+        except ValueError as e:
+            print(f"Datei nicht gefunden: {e}")
 
 
 
@@ -159,5 +181,3 @@ def Hauptmenu():
 if __name__ == "__main__":
     while True:
         Hauptmenu()
-
-
