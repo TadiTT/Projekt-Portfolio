@@ -69,7 +69,7 @@ Tools:         Git · GitHub · Power BI · Excel
 
 > Analyse eines Pharmadatensatzes zur Identifikation von Verkaufstrends, Top-Produkten und regionalen Leistungsunterschieden.
 
-**Technologien:** Python · Pandas 
+**Technologien:** Python · Pandas · Matplotlib 
 
 **Schwerpunkte:**
 - Datenbereinigung und strukturierte Aufbereitung mit Pandas
@@ -84,7 +84,7 @@ Tools:         Git · GitHub · Power BI · Excel
 ### Clean the Netflix Dataset
 > Learn to clean the Netflix dataset using Python and Pandas effectively.
 
-**Technologien:** Python · Pandas · Matplotlib
+**Technologien:** Python · Pandas 
 
 **Schwerpunkte:**
 - Datenbereinigung und strukturierte Aufbereitung mit Pandas
