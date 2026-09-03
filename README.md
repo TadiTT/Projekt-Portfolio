@@ -13,6 +13,40 @@ Tools:         Git · GitHub · Power BI · Excel
 
 ## Projekte
 
+### Global Tech Startups 2026 — Analyse
+
+> Mehrstufige Analyse von 25.000 globalen Tech-Startups — von der Datenvorbereitung über Kennzahlenberechnung, Gruppenanalysen und KI-Adoption bis hin zu einem vollständigen Visualisierungs-Dashboard und der Identifikation kritischer Risikogruppen.
+
+**Technologien:** Python · Pandas · Matplotlib
+
+**Dataset:** `global_tech_startups_2026.csv` — 25.000 Zeilen · 21 Spalten  
+**Schwierigkeit:** Intermediate+
+
+**Schwerpunkte:**
+- Daten laden & erkunden: `.info()`, `.describe()`, `.nunique()`, `.isnull().sum()`
+- Neue Kennzahlen berechnen: Layoff-Rate, Valuation-Multiple, Burn-Multiple, Startup-Alter — mit `.apply(lambda ...)`
+- Gruppenanalyse nach Branche (Domain): Top-5 nach Ø Valuation — *Generative AI führt mit Ø 885 Mio. USD*
+- Layoff-Analyse 2024/2025: 9.710 von 25.000 Startups hatten Entlassungen — Auswertung nach Domain, Funding-Stage und Land
+- Startup-Überlebensanalyse: Vergleich Independent / Closed / Acquired / IPO nach Runway, Revenue und Layoff-Rate
+- Zeitanalyse: Gründungsjahr-Trends, Generative-AI-Boom ab 2020, Ø Alter bei Series C+ / Pre-IPO
+- KI-Adoption & Effizienz: Pivot-Tabelle (`pivot_table()`) — AI-Level × Funding-Stage × Ø Revenue
+- Visualisierungs-Dashboard: 4 Subplots (Balken, Linie, Horizontalbalken, Kreisdiagramm), exportiert als `dashboard.png`
+- Kritische Startups filtern: Zombie Startups, Top-Performer (Tier-1 + kein Layoff), KI-Boom-Kandidaten — mit `.isin()`
+
+**Neu gelernt in diesem Projekt:**
+
+| Methode | Anwendung |
+|---|---|
+| `.apply(lambda ...)` | Zeilenweise Berechnung mit Bedingungen |
+| `.agg({'col': 'func'})` | Mehrere Aggregationen in einem Schritt |
+| `.rename(columns={...})` | Professionelle Spaltenbenennung |
+| `.pivot_table()` | Kreuztabellen — Standard-Tool jedes Analysten |
+| `plt.subplots(2, 2)` | Dashboard mit 4 Plots |
+| `plt.savefig()` | Grafik als Datei exportieren |
+| `.isin([...])` | Filter auf mehrere Werte gleichzeitig |
+
+---
+
 ### Verkaufsanalyse eines fiktiven Online-Shops
 
 > Vollständige Analyse der Verkaufsdaten eines fiktiven Online-Shops — von der Datenvorbereitung über statistische Auswertung bis hin zur Visualisierung und Zeitreihenanalyse.
